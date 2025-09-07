@@ -1,0 +1,16 @@
+name: Checkout With Action
+on: push
+
+jobs:
+  checkout-the-repository:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List Files Before
+        run: ls -a
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: List Files After
+        run: ls -a
+      - name: Repository Details
+        run: |
+          echo $GITHUB_REF
